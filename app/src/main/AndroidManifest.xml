@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.sparkfengbo.app.javabcsxtest"
-        android:sharedUserId="android.fengbo">
+          android:sharedUserId="android.fengbo">
+
+    <permission
+            android:name="com.sparkfengbo.test"
+            android:protectionLevel="signature"/>
 
     <application
             android:allowBackup="true"
@@ -22,15 +26,20 @@
         </activity>
         <activity
                 android:name=".ExportedActivity"
-                android:label="@string/title_activity_main2"
                 android:exported="true"
+                android:label="@string/title_activity_main2"
                 android:permission="com.sparkfengbo.test">
             <intent-filter>
                 <action android:name="com.fengbo.export"/>
+
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
+
+        <!-- <service android:name=".javabcsxtest.MyService" -->
+        <!-- android:process=":remote"/> -->
+        <activity android:name=".aidltest.AIDLTestActivity">
+        </activity>
     </application>
 
-    <permission android:name="com.sparkfengbo.test" android:protectionLevel="signature"/>
 </manifest>
